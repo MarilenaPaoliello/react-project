@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ExportItem from './components/ExpenseItem';
+import Expenses from './components/Expenses'
 
 function App() {
     const expenses = [
@@ -30,24 +30,10 @@ function App() {
                 <img src = { logo } className = "App-logo"alt = "logo" />
                 <div><h1>This is my FIRST React App</h1></div>
                 <p>this is a visible paragraph</p>
-                <ExportItem 
-                date={expenses[0].date}
-                title={expenses[0].title} 
-                amount={expenses[0].amount}>
-                </ExportItem>
-                <ExportItem 
-                date={expenses[1].date}
-                title={expenses[1].title} 
-                amount={expenses[1].amount}>
-                </ExportItem>
-                <ExportItem 
-                date={expenses[2].date}
-                title={expenses[2].title} 
-                amount={expenses[2].amount}>
-                </ExportItem>
-            
+               
                 <a className = "App-link" href = "https://reactjs.org" target = "_blank" rel = "noopener noreferrer" >Learn React </a> 
             </header> 
+            <Expenses items={expenses}></Expenses>
            
         </div>
     );
