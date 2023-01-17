@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+import NewExpense from './components/NewExpenses/NewExpense';
 import Expenses from './components/Expenses/Expenses'
 
 const App = () => {
@@ -25,15 +27,15 @@ const App = () => {
             date: new Date(2021, 5, 12),
           },
     ];
+
+    const addExpenseHandler = expense =>{
+        console.log('In App.js');
+        console.log(expense);
+    };
+
     return ( 
         <div className = "App" >
-            <header className = "App-header" >
-                <img src = { logo } className = "App-logo"alt = "logo" />
-                <div><h1>This is my FIRST React App</h1></div>
-                <p>this is a visible paragraph</p>
-               
-                <a className = "App-link" href = "https://reactjs.org" target = "_blank" rel = "noopener noreferrer" >Learn React </a> 
-            </header> 
+            <NewExpense onAddExpense={addExpenseHandler} />
             <Expenses items={expenses}></Expenses>
            
         </div>
